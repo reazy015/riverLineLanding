@@ -1,0 +1,49 @@
+.company {
+  background-image: url(/img/bg/company-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.company-info-wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  padding-left: 75px;
+  padding-right: 75px;
+  background-color: $company-background;
+}
+.company__header {
+  @include anaphora;
+  font-size: 48px;
+  color: $basic-white;
+}
+.company__subheader {
+  @include gotham-bold;
+  font-size: 24px;
+  color: $basic-white;
+}
+.company__text {
+  @include gotham-reg;
+  font-size: 14px;
+  color: $company-text;
+  margin-bottom: 35px;
+}
+.company-docs-wrapper {
+  display: flex;
+}
+.company-license {
+  flex: 0 1 50%;
+}
+.company-license__header {
+  @include gotham-bold;
+  font-size: 18px;
+  color: $basic-white;
+}
+.license-wrapper {
+  display: flex;
+}
+.license-item {
+  flex: 0 1 90px;
+  margin-right: 10px;
+}

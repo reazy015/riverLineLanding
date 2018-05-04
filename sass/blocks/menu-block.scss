@@ -1,0 +1,56 @@
+.menu {
+  padding-top: 380px;
+  padding-bottom: 115px;
+  background-color: $light-blue;
+}
+.menu-intro-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu__header {
+  @include anaphora;
+  font-size: 48px;
+  color: $dark-blue;
+  margin-bottom: 25px;
+}
+.menu__comment {
+  @include gotham-reg;
+  font-size: 16px;
+  color: $font-light-blue;
+}
+.menu-example {
+  background-color: $basic-white;
+  padding-left: 75px;
+  padding-right: 100px;
+  padding-top: 70px;
+}
+.menu-example__header {
+  @include gotham-bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: $menu-azure;
+}
+.menu-example-list {
+  @include list-reset;
+  display: flex;
+  height: 330px;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.menu-example-list-item {
+  display: flex;
+  width: 450px;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+.list-item__prop {
+  @include gotham-reg;
+  font-size: 12px;
+  color: $menu-item-prop;
+}
+.list-item__value {
+  @include gotham-bold;
+  font-size: 14px;
+  color: $dark-blue;
+}

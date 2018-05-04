@@ -1,0 +1,114 @@
+.about {
+  position: relative;
+  padding-top: 290px;
+  padding-bottom: 335px;
+  background-color: $light-blue;
+}
+.about__header {
+  @include anaphora;
+  margin: 0;
+  font-size: 48px;
+  color: $dark-blue;
+}
+.about__comment {
+  @include gotham-reg;
+  font-size: 16px;
+  color: $font-light-blue;
+}
+.about-info {
+  display: flex;
+  max-width: 500px;
+  justify-content: space-between;
+}
+.about-info-time__header,
+.about-info-time-price__header {
+  @include gotham-reg;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: $font-light-blue;
+}
+.about-info-time__limit span {
+  @include gotham-bold;
+  font-size: 14px;
+  color: $dark-blue;
+}
+.about-info-time__limit,
+.about-info-time-price__price {
+  @include gotham-bold;
+  font-size: 24px;
+  color: $dark-blue;
+}
+.about-description {
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  padding-left: 75px;
+  padding-right: 75px;
+  padding-top: 70px;
+  padding-bottom: 75px;
+  transform: translate(-3%, 50%);
+  background-color: $basic-white;
+  z-index: 50;
+}
+.about-description-list-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.about-description-item {
+  flex: 0 1 200px;
+}
+.about-description__header {
+  @include gotham-reg;
+  margin-bottom: 65px;
+  font-size: 16px;
+  color: $dark-blue
+}
+.description-item-number {
+  @include gotham-bold;
+  font-size: 72px;
+  color: $dark-blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & span {
+    @include gotham-reg;
+    font-size: 32px;
+    color: $table-azure;
+  }
+}
+.description-item-name {
+  @include gotham-reg;
+  font-size: 14px;
+  color: $font-light-blue;
+
+  & span {
+    @include gotham-bold;
+    color: $dark-blue;
+  }
+}
+.description-item-list {
+  @include list-reset;
+  margin-top: 50px;
+}
+.description-item-list__point {
+  @include gotham-reg;
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-size: 14px;
+  color: $dark-blue;
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $table-azure;
+  }
+}

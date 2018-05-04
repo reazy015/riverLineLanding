@@ -1,0 +1,67 @@
+.price {
+  position: relative;
+  padding-top: 380px;
+  padding-bottom: 325px;
+  background-image: url(/img/bg/price-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.price__header {
+  @include anaphora;
+  font-size: 48px;
+  color: $basic-white;
+}
+.price__comment {
+  @include gotham-bold;
+  font-size: 14px;
+  color: $basic-white;
+}
+.price-ship__names {
+  @include anaphora;
+  font-size: 30px;
+  color: $basic-white;
+}
+.price-ship-info {
+  width: 270px;
+  display: flex;
+  justify-content: space-between;
+}
+.price-ship-info-class__header {
+  @include gotham-reg;
+  font-size: 12px;
+  color: $basic-white;
+}
+.price-ship-info-class__class {
+  @include gotham-bold;
+  font-size: 16px;
+  color: $basic-white;
+}
+.price-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.price-table tr td,
+.price-table tr th{
+  border: 1px solid $middle-blue;
+}
+.price-table tr th {
+  @include gotham-bold;
+  height: 40px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $basic-white;
+}
+.price-table tr td {
+  @include gotham-reg;
+  height: 90px;
+  font-size: 14px;
+  color: $basic-white;
+  text-align: center;
+}
+.price-additional-info {
+  @include gotham-reg;
+  font-size: 12px;
+  text-align: right;
+  color: $basic-white;
+}

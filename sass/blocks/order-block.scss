@@ -1,0 +1,75 @@
+.order-panel {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+  background-color: $basic-white;
+  display: flex;
+}
+.order-toggle-wrapper {
+  padding-top: 56px;
+  padding-left: 53px;
+  padding-right: 170px;
+}
+.order-panel-toggle {
+  display: flex;
+  width: 300px;
+  margin-bottom: 80px;
+  justify-content: space-between;
+}
+.order-toggle-button-text {
+  @include gotham-reg;
+  font-size: 12px;
+  color: $dark-blue;
+
+  & span {
+    @include gotham-bold;
+    font-size: 16px;
+  }
+}
+.ship-info__header {
+  @include anaphora;
+  margin-bottom: 40px;
+  font-size: 48px;
+  color: $dark-blue;
+}
+.ship-info-params {
+  display: flex;
+  margin-bottom: 75px;
+}
+.order-panel-controls-wrapper {
+  display: flex;
+}
+.ship-params__class {
+  @include gotham-reg;
+  font-size: 12px;
+  color: $font-azure;
+  margin-right: 68px;
+
+  & span {
+    @include gotham-bold;
+    font-size: 24px;
+    color: $dark-blue;
+  }
+}
+.order-panel__buy,
+.order-panel__schedule {
+  @include gotham-bold;
+  padding: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+.order-panel__buy {
+  background-color: $table-azure;
+  color: $basic-white;
+  margin-right: 32px;
+}
+.order-panel__schedule {
+  border: 1px solid $dark-blue;
+}
+.order-panel-slider__item {
+  width: 100%;
+  height: auto;
+}
+
+

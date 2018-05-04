@@ -1,0 +1,29 @@
+.contacts {
+  padding-top: 95px;
+}
+.contacts__header {
+  @include anaphora;
+  font-size: 48px;
+  color: $dark-blue;
+  text-align: center;
+}
+.contacts-decor-wrapper {
+  text-align: center;
+}
+.contacts__name {
+  @include gotham-reg;
+  font-size: 16px;
+  color: $dark-blue;
+  text-align: center;
+}
+.contacts-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.contacts-item {
+  display: flex;
+  flex-direction: column;
+}
+.contacts-map-wrapper {
+  height: 300px;
+}

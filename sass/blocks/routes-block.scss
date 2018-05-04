@@ -1,0 +1,27 @@
+.routes__header {
+  text-align: center;
+}
+.routes-decor-wrapper {
+  width: 135px;
+  margin: 0 auto;
+}
+.routes-decor__img {
+  max-width: 100%;
+  height: auto;
+}
+.routes-decor-block {
+  position: relative;
+  height: 300px;
+  margin-top: 200px;
+  background-image: url(/img/bg/routes-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.routes-schema-img-wrapper {
+  position: absolute;
+  left: 50%;
+  top: -40%;
+  transform: translate(-50%);
+  z-index: 50;
+}
