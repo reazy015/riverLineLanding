@@ -1,22 +1,33 @@
 div.order-panel
     div.order-panel-slider
-        img(src='/img/slides/slider.jpg' alt='slider-img').order-panel-slider__item
+        div(style='background-image: url(/img/slides/slider.jpg)').order-panel-slider__item.order-panel-slider__item--active
+        div(style='background-image: url(/img/slides/slider.jpg)').order-panel-slider__item
+        div(style='background-image: url(/img/slides/slider.jpg)').order-panel-slider__item
+        div(style='background-image: url(/img/slides/slider.jpg)').order-panel-slider__item
+        div(style='background-image: url(/img/slides/slider.jpg)').order-panel-slider__item
+        div.order-panel-slider-controls
+            div.order-panel-slider__left
+                i.fas.fa-chevron-left
+            div.order-panel-slider__center
+                i.fas.fa-search-plus
+            div.order-panel-slider__right
+                i.fas.fa-chevron-right
     div.order-toggle-wrapper
         div.order-panel-toggle
             div.order-toggle-button
                 div.order-toggle-button-icon
                     img(src='/img/icons/ship.png' alt='icon-img').order-toggle-button__img
                 div.order-toggle-button-text Теплоход #[br] #[span Фаворит]
-            div.order-toggle-button
+            div.order-toggle-button.order-toggle-button--active
                 div.order-toggle-button-icon
                     img(src='/img/icons/windmill.png' alt='icon-img').order-toggle-button__img
                 div.order-toggle-button-text Теплоход #[br] #[span Марго]
         div.order-panel-ship-info
             h3.ship-info__header Марго
             div.ship-info-params
-                div.ship-params__class Класс теплохода: #[br] #[span P1.2]
-                div.ship-params__class Количество мест: #[br] #[span 35]
-                div.ship-params__class Преимущества: #[br] #[span WC, 2014, Бар]
+                div.ship-params__class #[span Класс теплохода:] #[br] #[span P1.2]
+                div.ship-params__class #[span Количество мест:] #[br] #[span 35]
+                div.ship-params__class #[span Преимущества:] #[br] #[span WC, 2014, Бар]
         div.order-panel-controls-wrapper
             div.order-panel__buy Забронировать
             div.order-panel__schedule Календарь стоимости

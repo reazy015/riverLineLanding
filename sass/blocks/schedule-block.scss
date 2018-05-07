@@ -2,6 +2,18 @@
   padding-top: 93px;
   padding-bottom: 105px;
   background-color: $light-blue;
+
+  @media (max-width: 1262px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 45px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 75px;
+  }
 }
 .schedule__header {
   @include anaphora;
@@ -9,6 +21,12 @@
   font-size: 48px;
   text-align: right;
   color: $font-blue;
+
+  @media (max-width: 680px) {
+    margin-top: 0;
+    font-size: 28px;
+    text-align: left;
+  }
 }
 .schedule__comment {
   @include gotham-reg;
@@ -16,6 +34,13 @@
   font-size: 16px;
   color: $font-light-blue;
   text-align: right;
+
+  @media (max-width: 680px) {
+    margin-bottom: 45px;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.8;
+  }
 }
 .schedule-panel {
   display: flex;
@@ -26,6 +51,10 @@
 .schedule-panel-date {
   display: flex;
   align-items: center;
+  
+  @media (max-width: 680px) {
+    display: none;
+  }
 }
 .schedule-panel-date__btn {
   display: flex;
@@ -46,15 +75,29 @@
   margin-left: 50px;
   margin-right: 50px;
   color: $table-azure;
+
+  @media (max-width: 768px) {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
 }
 .schedule-panel-choice {
   display: flex;
   align-items: center;
+
+  @media (max-width: 680px) {
+    flex-wrap: wrap;
+  }
 }
 .schedule-panel-choice__text {
   @include gotham-reg;
   color: $font-light-blue;
   padding-right: 25px;
+
+  @media (max-width: 680px) {
+    flex: 1 1 100%;
+    padding-bottom: 20px;
+  }
 }
 .ship-choice-input {
   display: none;

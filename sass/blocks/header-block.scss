@@ -6,6 +6,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+
+  @media (max-width: 680px) {
+    padding-top: 35px;
+    padding-bottom: 45px;
+    background-image: url(/img/bg/mobile-bg.jpg);
+  }
 }
 .page-header-top-wrapper {
   display: flex;
@@ -14,13 +20,50 @@
   flex: 0 1 960px;
   margin-left: 15px;
 
+
+
   @media (max-width: 1024px) {
     display: none;
+    opacity: 0;
+    transition: opacity .5s;
+
+    &--mobile {
+      display: flex;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin-left: 0;
+      padding-left: 25px;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      background-color: #00bac0;
+      animation-name: rollIn;
+      animation-fill-mode: forwards;
+      animation-duration: .8s;
+      opacity: 1;
+      z-index: 60;
+
+      & .page-header-nav-list {
+        display: flex;
+        flex: 0 1 80%;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 365px;
+        margin-top: 130px;
+      }
+
+      & .header-nav-list-item {
+        font-size: 18px;
+      }
+    }
   }
 }
 .page-header-logo-wrapper {
   flex: 0 0 75px;
   margin-right: auto;
+  z-index: 70;
 }
 .page-header-logo-wrapper img {
   max-width: 100%;
@@ -47,18 +90,28 @@
   margin-bottom: 60px;
   font-size: 48px;
   max-width: 605px;
+
+  @media (max-width: 680px) {
+    margin-top: 70px;
+    margin-bottom: 40px;
+    font-size: 28px;
+  }
 }
 .page-header__text {
   @include gotham-reg;
-  width: 500px;
+  max-width: 500px;
   margin-bottom: 75px;
   font-size: 16px;
   line-height: 1.5;
+
+  @media (max-width: 680px) {
+    margin-bottom: 60px;
+  }
 }
 .page-header__callback {
   @include gotham-reg;
   text-transform: uppercase;
-  width: 300px;
+  width: 100%;
   padding: 20px;
   border-radius: 50px;
   font-size: 12px;
@@ -68,13 +121,15 @@
   cursor: pointer;
 }
 .callback-btn-wrapper {
-  display: inline-block;
+  display: block;
+  max-width: 300px;
   padding: 5px;
   border-radius: 50px;
   background-color: rgba(1, 1, 1, 0.1);
 }
 .nav-toggle-btn {
   display: none;
+  z-index: 70;
 
   @media (max-width: 1024px) {
     display: block;
@@ -88,4 +143,8 @@
       background-color: $basic-white;
     }
   }
+}
+@keyframes rollIn {
+  from {top: -100%}
+  to {top: 0%}
 }

@@ -12,25 +12,49 @@
   padding-left: 75px;
   padding-right: 75px;
   background-color: $company-background;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 580px) {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
 }
 .company__header {
   @include anaphora;
   font-size: 48px;
   color: $basic-white;
+
+  @media (max-width: 580px) {
+    font-size: 38px;
+  }
 }
 .company__subheader {
   @include gotham-bold;
   font-size: 24px;
   color: $basic-white;
+
+  @media (max-width: 580px) {
+    font-size: 18px;
+  }
 }
 .company__text {
   @include gotham-reg;
   font-size: 14px;
   color: $company-text;
   margin-bottom: 35px;
+  line-height: 1.8;
 }
 .company-docs-wrapper {
   display: flex;
+
+  @media (max-width: 760px) {
+    flex-direction: column;
+  }
 }
 .company-license {
   flex: 0 1 50%;
@@ -42,6 +66,10 @@
 }
 .license-wrapper {
   display: flex;
+
+  @media (max-width: 580px) {
+    flex-wrap: wrap;
+  }
 }
 .license-item {
   flex: 0 1 90px;
