@@ -1,0 +1,79 @@
+div.popup-wrapper
+    div.popup-module
+        h1.popup-module__header Вы хотите забронировать:
+        p.popup-module__date
+        form.popup-module-form
+            p.popup-module-form__header Выберит время:
+            div.popup-module-input-wrapper
+                div.custom-select
+                    div.custom-select-actual.begin-time
+                        span 21:00
+                        i.fas.fa-chevron-down
+                    ul.custom-select-variant-list.begin-time-variants-list
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+                div.custom-select
+                    div.custom-select-actual.begin-time
+                        span 21:00
+                        i.fas.fa-chevron-down
+                    ul.custom-select-variant-list.begin-time-variants-list
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+                        li.variant-list-item
+                            label
+                                input(type='radio', name='time')
+                                span 21:00
+            div.popup-module-input-wrapper
+                input(type='text', name='name', placeholder='Имя', required).popup-module-form__input
+                input(type='text', name='phone', placeholder='Телефон', required).popup-module-form__input
+            div.popup-module-input-wrapper.popup-module-input-wrapper--agreement
+                label
+                    input(type='checkbox', name='agreement', required)
+                    span Я согласен с #[a условиями договора] и #[a политикой конфиденциальности]
+            div.popup-module-input-wrapper
+                input(type='submit', value='Забронировать').popup-module-form__submit
+                div.order-price
+                    span.order-price__header Стоимость:
+                    span.order-price__number 1200
+                    span.order-price__currency руб.
+        span.popup-module__close

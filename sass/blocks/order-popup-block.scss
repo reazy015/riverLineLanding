@@ -1,0 +1,125 @@
+.popup-wrapper {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(19, 59, 77, 0.9);
+}
+.popup-module {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 725px;
+  margin: auto;
+  padding: 70px 75px;
+  background-color: #fff;
+}
+.popup-module__header {
+  @include anaphora;
+  color: $dark-blue;
+}
+.popup-module-input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 30px;
+
+  &--agreement {
+    padding-top: 25px;
+
+    & span {
+      padding-left: 15px;
+    }
+  }
+}
+.popup-module-form__header {
+  @include gotham-bold;
+  font-size: 14px;
+  color: $font-light-blue;
+}
+.custom-select {
+  position: relative;
+  flex: 0 1 48%;
+}
+
+.custom-select-actual {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px 25px;
+  background-color: #e9f3f8;
+  border-radius: 50px;
+}
+.variant-list-item {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: #00bac0;
+  }
+}
+.custom-select-variant-list {
+  @include list-reset;
+  visibility: hidden;
+  position: absolute;
+  top: 110%;
+  width: 100%;
+  overflow: hidden;
+  will-change: auto;
+  transition: opacity .3s, transform .3s;
+  background-color: #e9f3f8;
+  border-radius: 15px;
+  opacity: 0;
+  transform: scale(0.9);
+  z-index: -100;
+}
+.variant-list-item input[type='radio'] {
+  display: none;
+}
+.begin-time-variants-list--open {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  z-index: 50;
+}
+.popup-module-form__input {
+  flex: 0 1 48%;
+  background-color: #e9f3f8;
+  padding: 20px 25px;
+  border: none;
+  border-radius: 50px;
+
+  &:focus {
+    outline: none;
+  }
+}
+.popup-module__close {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -45px;
+  right: 0;
+  background-image: url(../img/icons/close.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+.popup-module-form__submit {
+  @include gotham-reg;
+  text-transform: uppercase;
+  width: 210px;
+  padding: 20px;
+  border-radius: 50px;
+  font-size: 12px;
+  color: $basic-white;
+  background: linear-gradient(#00c6c4, #0079ac);
+  border: none;
+  cursor: pointer;
+}

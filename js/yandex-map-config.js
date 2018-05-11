@@ -21,7 +21,7 @@ function init () {
     hintContent: 'Мы находимся по адресу: Большая Пушкарская ул., 38'
   },{
     iconLayout: 'default#image',
-    iconImageHref: '/img/icons/map-baloon.png',
+    iconImageHref: 'img/icons/map-baloon.png',
     iconImageSize: [40, 65],
     iconImageOffset: [-20, -70],
     iconContentLayout: MyIconContentLayout

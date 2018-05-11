@@ -1,27 +1,35 @@
-div.order-panel
+div.order-panel#ships
     div.order-panel-slider
-        div(style='background-image: url(/img/slides/slider.jpg)').order-panel-slider__item.order-panel-slider__item--active
-        div(style='background-image: url(/img/slides/slider.jpg)').order-panel-slider__item
-        div(style='background-image: url(/img/slides/slider.jpg)').order-panel-slider__item
-        div(style='background-image: url(/img/slides/slider.jpg)').order-panel-slider__item
-        div(style='background-image: url(/img/slides/slider.jpg)').order-panel-slider__item
+        div(style='background-image: url(img/slides/slider.jpg)', data-img='url(img/slides/slider.jpg)').order-panel-slider__item.order-panel-slider__item--active
+        div(style='background-image: url(img/slides/slider.jpg)', data-img='url(img/slides/slider.jpg)').order-panel-slider__item
+        div(style='background-image: url(img/slides/slider.jpg)', data-img='url(img/slides/slider.jpg)').order-panel-slider__item
+        div(style='background-image: url(img/slides/slider.jpg)', data-img='url(img/slides/slider.jpg)').order-panel-slider__item
+        div(style='background-image: url(img/slides/slider.jpg)', data-img='url(img/slides/slider.jpg)').order-panel-slider__item
         div.order-panel-slider-controls
             div.order-panel-slider__left
                 i.fas.fa-chevron-left
-            div.order-panel-slider__center
+            div.order-panel-slider__center.img-zoom
                 i.fas.fa-search-plus
             div.order-panel-slider__right
                 i.fas.fa-chevron-right
     div.order-toggle-wrapper
         div.order-panel-toggle
-            div.order-toggle-button
-                div.order-toggle-button-icon
-                    img(src='/img/icons/ship.png' alt='icon-img').order-toggle-button__img
-                div.order-toggle-button-text Теплоход #[br] #[span Фаворит]
-            div.order-toggle-button.order-toggle-button--active
-                div.order-toggle-button-icon
-                    img(src='/img/icons/windmill.png' alt='icon-img').order-toggle-button__img
-                div.order-toggle-button-text Теплоход #[br] #[span Марго]
+            div.current-button-mobile
+                div.order-toggle-button.order-toggle-button--active
+                    div.order-toggle-button-icon
+                        img(src='img/icons/ship.png' alt='icon-img').order-toggle-button__img
+                    div.order-toggle-button-text Теплоход #[br] #[span Фаворит]
+                span.decor
+                    i.fas.fa-chevron-down
+            div.buttons-wrapper-helper
+                div.order-toggle-button
+                    div.order-toggle-button-icon
+                        img(src='img/icons/ship.png' alt='icon-img').order-toggle-button__img
+                    div.order-toggle-button-text Теплоход #[br] #[span Фаворит]
+                div.order-toggle-button.order-toggle-button--active
+                    div.order-toggle-button-icon
+                        img(src='img/icons/windmill.png' alt='icon-img').order-toggle-button__img
+                    div.order-toggle-button-text Теплоход #[br] #[span Марго]
         div.order-panel-ship-info
             h3.ship-info__header Марго
             div.ship-info-params

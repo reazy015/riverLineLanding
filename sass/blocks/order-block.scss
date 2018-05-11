@@ -39,7 +39,7 @@
     padding-right: 25px;
   }
 }
-.order-panel-toggle {
+.order-panel-toggle, .mobile-wrapper {
   display: flex;
   width: 300px;
   margin-bottom: 65px;
@@ -53,6 +53,9 @@
     height: 90px;
     width: 100%;
     background-color: #edf7ff;
+  }
+
+  @media (max-width: 580px) {
   }
 }
 .order-toggle-button {
@@ -143,6 +146,7 @@
   text-transform: uppercase;
   border-radius: 50px;
   height: 50px;
+  justify-content: center;
 
   @media (max-width: 580px) {
     margin-bottom: 15px;
@@ -207,6 +211,51 @@
   &:hover {
     color: $table-azure;
   }
+}
+.current-button-mobile {
+  position: relative;
+  display: none;
+  cursor: pointer;
+
+  & .decor {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translate(-50%);
+
+  }
+
+  @media (max-width: 580px) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 25px;
+  }
+}
+.buttons-wrapper-helper {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+
+    @media (max-width: 580px) {
+      display: none;
+      
+      &--active {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 90px;
+        background-color: #edf7ff;
+        padding-left: 25px;
+        padding-bottom: 25px;
+        width: 100%;
+      }
+
+      & .order-toggle-button {
+        margin-bottom: 15px;
+      }
+    }
 }
 @keyframes FadeIn {
   from {

@@ -2,6 +2,10 @@
   max-width: 1226px;
   margin: 0 auto;
 
+  &:focus {
+    outline: none;
+  }
+
   &--header {
     max-width: 1175px;
 
