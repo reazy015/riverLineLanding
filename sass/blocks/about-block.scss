@@ -154,9 +154,9 @@
   }
 }
 .about-description__header {
-  @include gotham-reg;
+  @include anaphora;
   margin-bottom: 65px;
-  font-size: 16px;
+  font-size: 24px;
   color: $dark-blue;
 
   @media (max-width: 580px) {

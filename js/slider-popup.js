@@ -3,7 +3,7 @@
 window.sliderPopup = (function (){
   var sliderPopupWrapper = document.querySelector('.slider-popup-wrapper');
   var sliderPopupSlide = sliderPopupWrapper.querySelector('.slider-popup-slide');
-  var currentImgUrl = document.querySelector('.order-panel-slider__item--active').dataset.img;
+  var currentImgUrl = document.querySelector('.slick-active').src;
   var zoomImg = document.querySelector('.img-zoom');
 
   function closeOnOuterClick(evt) {
@@ -19,7 +19,7 @@ window.sliderPopup = (function (){
   zoomImg.addEventListener('click', function (evt) {
     evt.stopPropagation();
     sliderPopupWrapper.classList.toggle('slider-popup-wrapper--active');
-    sliderPopupSlide.style.backgroundImage = currentImgUrl;
+    sliderPopupSlide.style.backgroundImage = 'url(' + currentImgUrl + ')';
     document.addEventListener('click', closeOnOuterClick);
   })
 

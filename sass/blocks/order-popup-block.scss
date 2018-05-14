@@ -1,11 +1,15 @@
 .popup-wrapper {
   position: fixed;
-  display: block;
+  display: none;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   background-color: rgba(19, 59, 77, 0.9);
+  
+  &--open {
+    display: block;
+  }
 }
 .popup-module {
   position: relative;
@@ -18,7 +22,16 @@
 }
 .popup-module__header {
   @include anaphora;
+  font-size: 36px;
   color: $dark-blue;
+  margin-bottom: 5px;
+}
+.popup-module__date {
+  @include gotham-bold;
+  font-size: 24px;
+  color: #00bac0;
+  margin-top: 0;
+  margin-bottom: 70px;
 }
 .popup-module-input-wrapper {
   display: flex;
@@ -27,21 +40,71 @@
   margin-bottom: 30px;
 
   &--agreement {
-    padding-top: 25px;
+    @include gotham-reg;
+    margin-top: 82px;
+    margin-bottom: 42px;
+    font-size: 12px;
+    color: #145378;
+
+    & a {
+      color: #00bac0;
+    }
 
     & span {
-      padding-left: 15px;
+      position: relative;
+      padding-left: 35px;
+    }
+    
+    & input[type='checkbox'] {
+      display: none;
+    }
+
+    & input[type='checkbox']:checked ~ span:before {
+      position: absolute;
+      display: block;
+      content: '';
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-color: #00bac0;
+      background-image: url(../img/icons/checkbox-icon.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      border: 1px solid #00bac0;
+      border-radius: 5px;
+    }
+
+    & input[type='checkbox'] ~ span:before {
+      position: absolute;
+      display: block;
+      content: '';
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border: 1px solid #00bac0;
+      border-radius: 5px;
     }
   }
 }
+
 .popup-module-form__header {
   @include gotham-bold;
   font-size: 14px;
-  color: $font-light-blue;
+  color: #145378;
 }
 .custom-select {
+  @include gotham-reg;
+  color: $font-light-blue;
   position: relative;
   flex: 0 1 48%;
+
+  &:first-of-type {
+    color: $font-dark-blue-label;
+  }
 }
 
 .custom-select-actual {
@@ -122,4 +185,21 @@
   background: linear-gradient(#00c6c4, #0079ac);
   border: none;
   cursor: pointer;
+}
+.order-price__header {
+  @include gotham-bold;
+  padding-right: 15px;
+  font-size: 18px;
+  color: #145378;
+}
+.order-price__number {
+  @include gotham-bold;
+  font-size: 30px;
+  color: #44ccd1;
+}
+.order-price__currency {
+  @include gotham-bold;
+  font-size: 18px;
+  color: #44ccd1;
+
 }

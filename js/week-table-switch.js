@@ -2,6 +2,9 @@
 
 window.weekTableSwithc = (function () {
   var mainTable = document.querySelector('.schedule-table');
+  var orderPopup = document.querySelector('.popup-wrapper');
+  var orderPopupOrderDate = orderPopup.querySelector('.popup-module__date');
+  var initialAvailableCells = document.querySelectorAll('.schedule-table tr:nth-of-type(n + 11) td')
   var forwardBtn = document.querySelector('.schedule-panel-date__btn--right');
   var backwardBtn = document.querySelector('.schedule-panel-date__btn--left');
   var dateInfoBlock = document.querySelector('.schedule-panel-date__info');
@@ -9,6 +12,8 @@ window.weekTableSwithc = (function () {
   var shipTableToggle = document.querySelectorAll('.ship-choice-input');
   var datesTableHeadersCounter = datesTableHeaders.length;
   var monthDictionary = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август', 'Сентябрь','Октябрь', 'Ноябрь'];
+  var monthDictionarPopup = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля','Августа', 'Сентября','Октября', 'Ноября'];
+  var daysDictionary = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
   var startMonday = new Date(2018, 4, 21);
   var startSunday = new Date(2018, 4, 27);
   var INITIAL_DATE = new Date(2018, 4, 21);
@@ -64,6 +69,28 @@ window.weekTableSwithc = (function () {
     }
   }
 
+  function onOrderHandleClick(item, date) {
+    if (item) {
+      if (!item.dataset.disable) {
+        orderPopup.classList.add('popup-wrapper--open');
+        document.body.classList.add('no-scroll');
+        orderPopupOrderDate.textContent = daysDictionary[date.getDay()] + ', ' + date.getDate() + ' ' + monthDictionarPopup[date.getMonth()];
+      }
+    }  else {
+      document.body.classList.add('no-scroll');
+      orderPopup.classList.add('popup-wrapper--open');
+    }
+  }
+
+  function markDisabledCells(cellsList) {
+    for (var i = 0; i < cellsList.length; i++) {
+      cellsList[i].dataset.disable = '1';
+    }
+  }
+
+  updateTableDateHeader(startMonday, startSunday);
+  markDisabledCells(initialAvailableCells);
+
   forwardBtn.addEventListener('click', function() {
     var dateForward = addNextWeek();
     dateInfoBlock.textContent = monthDictionary[startMonday.getMonth()] + ' ' + dateForward.monday + ' - ' + dateForward.sunday;
@@ -82,10 +109,12 @@ window.weekTableSwithc = (function () {
 
   shipTableToggle[1].addEventListener('change', function() {
       mainTable.classList.add('schedule-table--ss');
+      markDisabledCells(document.querySelectorAll('.schedule-table--ss tr:nth-of-type(n + 10) td'));
   });
 
   shipTableToggle[0].addEventListener('change', function() {
-    mainTable.classList.remove('schedule-table--ss');
+    mainTable.classList.remove('schedule-table--ss')
+    markDisabledCells(initialAvailableCells);
   });
 
   mainTable.addEventListener('click', function(evt) {
@@ -93,13 +122,19 @@ window.weekTableSwithc = (function () {
     var target = evt.target;
     var index = Array.prototype.indexOf.call(target.parentNode.children, target)
     var corresponding_th = document.querySelector('.schedule-table th:nth-child(' + (index+1) + ')');
-    var columnDate = corresponding_th.dataset.date;
-
+    var columnDate = new Date(corresponding_th.dataset.date);
     if (currentDate < columnDate) {
-      console.log(true);
+      onOrderHandleClick(target, columnDate);
     } else {
       console.log(false);
     }
   })
+
+  document.querySelector('.page-header__callback').addEventListener('click', function() {
+    onOrderHandleClick();
+  });
+  document.querySelector('.order-panel__buy').addEventListener('click', function() {
+    onOrderHandleClick();
+  });
 
 })();

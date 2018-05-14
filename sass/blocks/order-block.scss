@@ -147,15 +147,37 @@
   border-radius: 50px;
   height: 50px;
   justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
 
   @media (max-width: 580px) {
     margin-bottom: 15px;
   }
 }
 .order-panel__buy {
+  position: relative;
   background: linear-gradient(#00c6c4, #0079ac);
   color: $basic-white;
   margin-right: 32px;
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 50px;
+    visibility: hidden;
+    transition: background-color .4s;
+  }
+
+  &:hover:before {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 
   @media (max-width: 580px) {
     margin-right: 0;
@@ -164,10 +186,41 @@
 .order-panel__schedule {
   border: 1px solid #a1bac9;
   color: #336a8a;
+  transition: background-color .3s;
+
+  &:hover {
+    background: linear-gradient(#00c6c4, #0079ac);
+    color: $basic-white;
+  }
+}
+.order-panel-ship-info {
+  display: none;
+  
+  &--active {
+    display: block;
+  }
 }
 .order-panel-slider {
-  position: relative;
-  flex: 0 1 400px;
+  display: flex;
+  visibility: hidden;
+  position: absolute;
+  left: -100500px;
+  z-index: -100;
+  width: 400px;
+  overflow: hidden;
+  
+  &--active {
+    display: flex;
+    position: relative;
+    visibility: visible;
+    left: 0;
+    z-index: 10;
+  }
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
 
   @media (max-width: 740px) {
     flex: 0 1 270px;
@@ -175,8 +228,13 @@
   }
 }
 .order-panel-slider__item {
-  display: none;
+
+}
+.order-panel-slider__item {
+  display: block;
   height: 100%;
+  width: 100%!important;
+  flex: 1 0 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -194,14 +252,10 @@
 }
 .order-panel-slider-controls{
   position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 150px;
+  left: 15%;
   bottom: 20px;
-  left: 50%;
-  transform: translate(-50%);
   color: $basic-white;
+  z-index: 50;
 }
 .order-panel-slider-controls i {
   font-size: 28px;
@@ -256,6 +310,37 @@
         margin-bottom: 15px;
       }
     }
+}
+.order-panel-slider .slick-arrow{
+  position: absolute;
+  bottom: 20px;
+  z-index: 50;
+  border: none;
+  background-color: transparent;
+  color: $basic-white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color .3s;
+
+  &:hover {
+    color: #00c6c4;
+  }
+
+  &:first-of-type {
+    left: 50px;
+  }
+
+  &:last-of-type {
+    right: 50px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
 }
 @keyframes FadeIn {
   from {
