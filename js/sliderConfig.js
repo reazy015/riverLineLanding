@@ -1,7 +1,6 @@
 'use strict';
 
-
-var swiper = new Swiper('.order-panel-slider--active', {
+var swiper = new Swiper('.swiper-container',{
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',

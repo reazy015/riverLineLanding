@@ -47,15 +47,21 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
+
+  @media (max-width: 680px) {
+    flex-direction: column-reverse;
+  }
 }
 .schedule-panel-date {
   width: 300px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   @media (max-width: 680px) {
-    display: none;
+    margin-top: 20px;
+    width: 270px;
+    margin-right: auto;
   }
 }
 .schedule-panel-date__btn {
@@ -103,6 +109,10 @@
   @include gotham-reg;
   color: $font-light-blue;
   padding-right: 25px;
+
+  @media (max-width: 768px) {
+    width: 120px;
+  }
 
   @media (max-width: 680px) {
     flex: 1 1 100%;

@@ -10,6 +10,7 @@ window.weekTableSwithc = (function () {
   var dateInfoBlock = document.querySelector('.schedule-panel-date__info');
   var datesTableHeaders = document.querySelectorAll('.order-date');
   var shipTableToggle = document.querySelectorAll('.ship-choice-input');
+  var popupModal = document.querySelector('.popup-wrapper ');
   var datesTableHeadersCounter = datesTableHeaders.length;
   var monthDictionary = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август', 'Сентябрь','Октябрь', 'Ноябрь'];
   var monthDictionarPopup = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля','Августа', 'Сентября','Октября', 'Ноября'];
@@ -33,6 +34,22 @@ window.weekTableSwithc = (function () {
       currentDate = currentDate.addDays(1);
     }
     return dateArray;
+  }
+
+  function closeOnOuterClick(evt){
+    var target = evt.target;
+    if (target.classList.contains('popup-wrapper')) {
+      popupModal.classList.remove('popup-wrapper--open');
+      document.body.classList.remove('no-scroll');
+      document.removeEventListener('click', closeOnOuterClick);
+    }
+  }
+
+  function closeOnEscBtn(evt) {
+    if (evt.keyCode === 27) {
+      popupModal.classList.remove('popup-wrapper--open');
+      document.body.classList.remove('no-scroll');
+    }
   }
 
   function addNextWeek() {
@@ -80,6 +97,7 @@ window.weekTableSwithc = (function () {
       document.body.classList.add('no-scroll');
       orderPopup.classList.add('popup-wrapper--open');
     }
+    document.addEventListener('click', closeOnOuterClick);
   }
 
   function markDisabledCells(cellsList) {
@@ -118,6 +136,7 @@ window.weekTableSwithc = (function () {
   });
 
   mainTable.addEventListener('click', function(evt) {
+    evt.stopPropagation();
     var currentDate = new Date();
     var target = evt.target;
     var index = Array.prototype.indexOf.call(target.parentNode.children, target)
@@ -129,6 +148,8 @@ window.weekTableSwithc = (function () {
       console.log(false);
     }
   })
+
+  document.addEventListener('keyup', closeOnEscBtn);
 
   document.querySelector('.page-header__callback').addEventListener('click', function() {
     onOrderHandleClick();

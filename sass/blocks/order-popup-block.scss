@@ -19,6 +19,10 @@
   margin: auto;
   padding: 70px 75px;
   background-color: #fff;
+
+  @media (max-width: 735px) {
+    padding: 15px
+  }
 }
 .popup-module__header {
   @include anaphora;
@@ -32,6 +36,10 @@
   color: #00bac0;
   margin-top: 0;
   margin-bottom: 70px;
+
+  @media (max-width: 730px) {
+    margin-bottom: 25px;
+  }
 }
 .popup-module-input-wrapper {
   display: flex;
@@ -48,11 +56,20 @@
 
     & a {
       color: #00bac0;
+      &:last-of-type {
+        @media (max-width: 730px) {
+          padding-left: 35px;
+        }
+      }
     }
 
     & span {
       position: relative;
       padding-left: 35px;
+
+      @media (max-width: 730px) {
+        line-height: 1.8;
+      }
     }
     
     & input[type='checkbox'] {
@@ -89,6 +106,12 @@
       border-radius: 5px;
     }
   }
+
+  @media (max-width: 735px) {
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 }
 
 .popup-module-form__header {
@@ -104,6 +127,10 @@
 
   &:first-of-type {
     color: $font-dark-blue-label;
+  }
+
+  @media (max-width: 735px) {
+    margin-bottom: 15px;
   }
 }
 
@@ -162,6 +189,10 @@
   &:focus {
     outline: none;
   }
+
+  @media (max-width: 735px) {
+    margin-bottom: 15px;
+  }
 }
 .popup-module__close {
   position: absolute;
@@ -185,6 +216,12 @@
   background: linear-gradient(#00c6c4, #0079ac);
   border: none;
   cursor: pointer;
+
+  @media (max-width: 730px) {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
 .order-price__header {
   @include gotham-bold;

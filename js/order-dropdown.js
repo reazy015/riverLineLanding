@@ -19,11 +19,17 @@ window.orderDropdown = (function (){
     }
   }
 
+  function replaceMobileCurrentBtn(item) {
+    dropdownBtn.replaceChild(item, dropdownBtn.firstElementChild)
+  }
+
   orderPanelToggleBtnsList[0].addEventListener('click', function() {
     disableAllActiveInfoBlocks();
     this.classList.add('order-toggle-button--active');
     shipInfoList[1].classList.add('order-panel-ship-info--active');
     orderPanelSlidersList[1].classList.add('order-panel-slider--active');
+    submenu.classList.remove('buttons-wrapper-helper--active');
+    replaceMobileCurrentBtn(this.cloneNode(true))
   });
 
   orderPanelToggleBtnsList[1].addEventListener('click', function() {
@@ -31,6 +37,8 @@ window.orderDropdown = (function (){
     this.classList.add('order-toggle-button--active');
     shipInfoList[0].classList.add('order-panel-ship-info--active');
     orderPanelSlidersList[0].classList.add('order-panel-slider--active');
+    submenu.classList.remove('buttons-wrapper-helper--active');
+    replaceMobileCurrentBtn(this.cloneNode(true))
   });
 
   console.log(orderPanelToggleBtnsList);

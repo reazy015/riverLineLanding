@@ -28,8 +28,13 @@
 
   &--docs {
     top: 8%;
-    width: 40%;
-    height: 50%;
+    width: 30%;
+    height: 40%;
+
+    @media (max-width: 768px) {
+      width: 25%;
+      height: 35%;
+    }
 
     & img {
       max-width: 100%;
