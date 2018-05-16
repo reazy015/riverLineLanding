@@ -238,5 +238,23 @@
   @include gotham-bold;
   font-size: 18px;
   color: #44ccd1;
+}
+.time-input {
+  @include gotham-reg;
+  color: $dark-blue;
+  border: none;
+  background-color: transparent;
 
+  &::placeholder {
+    color: $font-light-blue;
+    opacity: 1;
+  }
+}
+input[data-readonly] {
+  pointer-events: none;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
 }

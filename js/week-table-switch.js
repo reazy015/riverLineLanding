@@ -11,6 +11,8 @@ window.weekTableSwithc = (function () {
   var datesTableHeaders = document.querySelectorAll('.order-date');
   var shipTableToggle = document.querySelectorAll('.ship-choice-input');
   var popupModal = document.querySelector('.popup-wrapper ');
+  var timeInputsList = document.querySelectorAll('.time-input');
+  var timeSwitchList = document.querySelectorAll('.custom-select-variant-list');
   var datesTableHeadersCounter = datesTableHeaders.length;
   var monthDictionary = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август', 'Сентябрь','Октябрь', 'Ноябрь'];
   var monthDictionarPopup = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля','Августа', 'Сентября','Октября', 'Ноября'];
@@ -114,7 +116,6 @@ window.weekTableSwithc = (function () {
     dateInfoBlock.textContent = monthDictionary[startMonday.getMonth()] + ' ' + dateForward.monday + ' - ' + dateForward.sunday;
     updateTableDateHeader();
   });
-
   backwardBtn.addEventListener('click', function() {
     if (startMonday <= INITIAL_DATE) {
       return false;
@@ -124,17 +125,14 @@ window.weekTableSwithc = (function () {
       updateTableDateHeader();
     }
   });
-
   shipTableToggle[1].addEventListener('change', function() {
       mainTable.classList.add('schedule-table--ss');
       markDisabledCells(document.querySelectorAll('.schedule-table--ss tr:nth-of-type(n + 10) td'));
   });
-
   shipTableToggle[0].addEventListener('change', function() {
     mainTable.classList.remove('schedule-table--ss')
     markDisabledCells(initialAvailableCells);
   });
-
   mainTable.addEventListener('click', function(evt) {
     evt.stopPropagation();
     var currentDate = new Date();
@@ -148,14 +146,21 @@ window.weekTableSwithc = (function () {
       console.log(false);
     }
   })
-
   document.addEventListener('keyup', closeOnEscBtn);
-
   document.querySelector('.page-header__callback').addEventListener('click', function() {
     onOrderHandleClick();
   });
   document.querySelector('.order-panel__buy').addEventListener('click', function() {
     onOrderHandleClick();
   });
-
+  timeSwitchList[0].addEventListener('click', function(evt) {
+    var target = evt.target;
+    timeInputsList[0].value = target.dataset.time;
+    this.classList.remove('begin-time-variants-list--open');
+  });
+  timeSwitchList[1].addEventListener('click', function(evt) {
+    var target = evt.target;
+    timeInputsList[1].value = target.dataset.time;
+    this.classList.remove('begin-time-variants-list--open');
+  });
 })();

@@ -122,10 +122,13 @@
 
   @media (max-width: 580px) {
     margin-right: 15px;
+    flex: 0 1 53%;
   }
 }
 .list-item__value {
   @include gotham-bold;
+  flex: 0 1 30%;
+  text-align: right;
   font-size: 14px;
   color: #145378;
 }
