@@ -36,7 +36,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 200%;
     color: #fff;
     font-size: 12px;
     background-color: #00bac0;
@@ -59,8 +59,15 @@
     overflow-x: scroll;
   }
 }
-.schedule-table tr:nth-of-type(n + 11) td:nth-of-type(n + 2) {
+.schedule-table tr:nth-of-type(n + 20) td:nth-of-type(n + 2) {
   background-color: #eee;
+  cursor: auto;
+
+  &:hover:after {
+    display: none;
+  }
+}
+.schedule-table tr:nth-of-type(19) td:nth-of-type(n + 2) {
   cursor: auto;
 
   &:hover:after {
@@ -73,11 +80,11 @@
 .schedule-table tr td:first-of-type:hover:after {
   display: none;
 }
-.schedule-table--ss tr:nth-of-type(n + 10) td:nth-of-type(n + 2) {
-  background-color: #eee;
-  cursor: auto;
-
-  &:hover:after {
-    display: none;
-  }
-}
+//.schedule-table--ss tr:nth-of-type(n + 15) td:nth-of-type(n + 2) {
+//  background-color: #eee;
+//  cursor: auto;
+//
+//  &:hover:after {
+//    display: none;
+//  }
+//}

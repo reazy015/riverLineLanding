@@ -18,7 +18,7 @@ function init () {
     });
 
   var myPlacemark = new ymaps.Placemark([59.925858, 30.317925],{
-    hintContent: 'Мы находимся по адресу: Большая Пушкарская ул., 38'
+    hintContent: 'Мы находимся: Московский пр. д.2'
   },{
     iconLayout: 'default#image',
     iconImageHref: 'img/icons/map-baloon.png',

@@ -4,7 +4,8 @@ window.weekTableSwithc = (function () {
   var mainTable = document.querySelector('.schedule-table');
   var orderPopup = document.querySelector('.popup-wrapper');
   var orderPopupOrderDate = orderPopup.querySelector('.popup-module__date');
-  var initialAvailableCells = document.querySelectorAll('.schedule-table tr:nth-of-type(n + 11) td')
+  var orderPopupOrderTime = orderPopup.querySelector('.time-input');
+  var initialAvailableCells = document.querySelectorAll('.schedule-table tr:nth-of-type(n + 19) td');
   var forwardBtn = document.querySelector('.schedule-panel-date__btn--right');
   var backwardBtn = document.querySelector('.schedule-panel-date__btn--left');
   var dateInfoBlock = document.querySelector('.schedule-panel-date__info');
@@ -88,12 +89,13 @@ window.weekTableSwithc = (function () {
     }
   }
 
-  function onOrderHandleClick(item, date) {
+  function onOrderHandleClick(item, date, time) {
     if (item) {
       if (!item.dataset.disable) {
         orderPopup.classList.add('popup-wrapper--open');
         document.body.classList.add('no-scroll');
         orderPopupOrderDate.textContent = daysDictionary[date.getDay()] + ', ' + date.getDate() + ' ' + monthDictionarPopup[date.getMonth()];
+        orderPopupOrderTime.value = time;
       }
     }  else {
       document.body.classList.add('no-scroll');
@@ -139,9 +141,10 @@ window.weekTableSwithc = (function () {
     var target = evt.target;
     var index = Array.prototype.indexOf.call(target.parentNode.children, target)
     var corresponding_th = document.querySelector('.schedule-table th:nth-child(' + (index+1) + ')');
+    var corresponding_time = target.parentElement.firstElementChild.dataset.time;
     var columnDate = new Date(corresponding_th.dataset.date);
     if (currentDate < columnDate) {
-      onOrderHandleClick(target, columnDate);
+      onOrderHandleClick(target, columnDate, corresponding_time);
     } else {
       console.log(false);
     }
@@ -158,9 +161,5 @@ window.weekTableSwithc = (function () {
     timeInputsList[0].value = target.dataset.time;
     this.classList.remove('begin-time-variants-list--open');
   });
-  timeSwitchList[1].addEventListener('click', function(evt) {
-    var target = evt.target;
-    timeInputsList[1].value = target.dataset.time;
-    this.classList.remove('begin-time-variants-list--open');
-  });
+
 })();

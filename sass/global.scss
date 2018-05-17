@@ -24,3 +24,8 @@
 .no-scroll {
   overflow: hidden;
 }
+.hidden {
+  visibility: hidden;
+  position: absolute;
+  z-index: -100500;
+}

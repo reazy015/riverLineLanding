@@ -64,6 +64,9 @@
 .price-table tr th{
   border: 1px solid $middle-blue;
 }
+.price-table tr td:first-of-type {
+  width: 270px;
+}
 .price-table tr th {
   @include gotham-bold;
   height: 40px;

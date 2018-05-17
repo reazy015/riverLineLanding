@@ -103,6 +103,7 @@
 
   @media (max-width: 680px) {
     flex-wrap: wrap;
+    width: 100%;
   }
 }
 .schedule-panel-choice__text {
@@ -139,4 +140,9 @@
   border: 1px solid $basic-white;
   background-color: $basic-white;
   color: $font-dark-blue-label;
+}
+.choice-btn--hidden {
+  position: absolute;
+  visibility: hidden;
+  z-index: -100;
 }
