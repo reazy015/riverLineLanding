@@ -9,9 +9,7 @@
   max-height: 465px;
   z-index: 20;
 
-  &:before {
 
-  }
 
   &:focus {
     outline: none;
@@ -34,6 +32,7 @@
     max-height: inherit;
   }
 }
+
 .order-panel-bg-wrapper {
   display: block;
   position: absolute;

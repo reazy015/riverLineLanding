@@ -68,6 +68,10 @@
   flex: 0 0 75px;
   margin-right: auto;
   z-index: 70;
+
+  &:focus {
+    outline: none;
+  }
 }
 .page-header-logo-wrapper img {
   max-width: 100%;
