@@ -1,11 +1,17 @@
 .order-panel {
   position: absolute;
   bottom: 0;
+  left: 50%;
   width: 1175px;
-  transform: translateY(50%);
+  transform: translate(-50%, 50%);
   background-color: $basic-white;
   display: flex;
   max-height: 465px;
+  z-index: 20;
+
+  &:before {
+
+  }
 
   &:focus {
     outline: none;
@@ -27,6 +33,17 @@
     flex-direction: column;
     max-height: inherit;
   }
+}
+.order-panel-bg-wrapper {
+  display: block;
+  position: absolute;
+  content: '';
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background-color: rgba(1, 1, 1, 0.3);
+  z-index: 0;
 }
 .order-toggle-wrapper {
   padding-top: 56px;
@@ -170,6 +187,7 @@
   background: linear-gradient(#00c6c4, #0079ac);
   color: $basic-white;
   margin-right: 32px;
+  width: 180px;
 
   &:before {
     position: absolute;

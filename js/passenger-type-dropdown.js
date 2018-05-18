@@ -36,6 +36,7 @@ window.passengerBox = ( function() {
     var inputVariantsList = inputBlock.querySelector('.custom-select-variant-list')
     var deletePassengerBtn = document.createElement('i');
     deletePassengerBtn.classList.add('fas', 'fa-times', 'delete-passenger');
+    inputBlock.classList.add('passenger-info-block-animate');
 
     inputBlock.addEventListener('click', openPassengerTypeDropDown);
     deletePassengerBtn.addEventListener('click', deletePassenger);
@@ -57,7 +58,6 @@ window.passengerBox = ( function() {
     }
 
     orderPriceElement.textContent = totalPrice;
-    console.log(totalPrice);
   }
 
   function updateAlldayPrice() {
