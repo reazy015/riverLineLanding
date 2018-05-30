@@ -64,6 +64,22 @@
     }
   }
 }
+.header-nav-list-item--active {
+  @media (min-width: 1024px) {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      display: block;
+      content: '';
+      top: 120%;
+      left: 0;
+      right: 0;
+      height: 2px; 
+      background-color: $table-azure;
+    }
+  }
+}
 .page-header-logo-wrapper {
   flex: 0 0 75px;
   margin-right: auto;

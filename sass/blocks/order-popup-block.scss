@@ -273,8 +273,10 @@
 }
 .order-price__number {
   @include gotham-bold;
+  max-width: 85px;
   font-size: 30px;
   color: #44ccd1;
+  border: none;
 }
 .order-price__currency {
   @include gotham-bold;

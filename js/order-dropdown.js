@@ -40,6 +40,5 @@ window.orderDropdown = (function (){
     submenu.classList.remove('buttons-wrapper-helper--active');
     replaceMobileCurrentBtn(this.cloneNode(true))
   });
-
-  console.log(orderPanelToggleBtnsList);
+ 
 })();

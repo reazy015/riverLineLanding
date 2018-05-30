@@ -55,6 +55,7 @@
     width: 280px
   }
 }
+
 .schedule-table tr td:first-child {
   @include gotham-reg;
   border: none;
@@ -68,7 +69,7 @@
     overflow-x: scroll;
   }
 }
-.schedule-table tr:nth-of-type(n + 8) td:nth-of-type(n + 2) {
+.schedule-table--fs tr:nth-of-type(n + 8) td:nth-of-type(n + 2) {
   background-color: #eee;
   cursor: auto;
 
@@ -76,17 +77,17 @@
     display: none;
   }
 }
+.schedule-table--ss tr:nth-of-type(n + 9) td:nth-of-type(n + 2) {
+ background-color: #eee!important;
+ cursor: auto;
+
+ &:hover:after {
+   display: none;
+ }
+}
 .schedule-table tr td:first-of-type {
   cursor: auto;
 }
 .schedule-table tr td:first-of-type:hover:after {
   display: none;
 }
-//.schedule-table--ss tr:nth-of-type(n + 15) td:nth-of-type(n + 2) {
-//  background-color: #eee;
-//  cursor: auto;
-//
-//  &:hover:after {
-//    display: none;
-//  }
-//}

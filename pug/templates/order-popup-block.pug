@@ -2,7 +2,9 @@ div.popup-wrapper
     div.popup-module
         h1.popup-module__header Вы хотите забронировать:
         p.popup-module__date
-        form.popup-module-form
+        form(method="POST", action="https://money.yandex.ru/eshop.xml").popup-module-form
+            input(type="hidden", name="scid", value="21638")
+            input(type="hidden", name="ShopID", value="30627", gt="", br="")
             div.popup-module-input-wrapper
                 span.input-wrapper__instruction Выберите время:
                 div.time-input-wrapper
@@ -46,9 +48,9 @@ div.popup-wrapper
                             input(type='text', name='passenger-type', data-readonly, data-price='700', value='Взрослый', required).passenger-type-input
                             i.fas.fa-chevron-down
                             ul.custom-select-variant-list.begin-time-variants-list.custom-select-variant-list--passenger
-                                li(data-price='700').variant-list-item Взрослый
-                                li(data-price='400').variant-list-item Детский
-                                li(data-price='300').variant-list-item Льготный
+                                li(data-price='1').variant-list-item Взрослый
+                                li(data-price='2').variant-list-item Детский
+                                li(data-price='3').variant-list-item Льготный
                     div.passenger-ticket-price
                         span.passenger-tickect-price__number 700
                         span.passenger-tickect-price__currency руб.
@@ -63,6 +65,6 @@ div.popup-wrapper
                 input(type='submit', value='Забронировать').popup-module-form__submit
                 div.order-price
                     span.order-price__header Стоимость:
-                    span.order-price__number 700
+                    input(type="text", name="sum", value="1", data-readonly).order-price__number
                     span.order-price__currency руб.
         span.popup-module__close

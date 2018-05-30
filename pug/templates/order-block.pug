@@ -1,5 +1,5 @@
 div.order-panel#ships
-    div(data-target='1').order-panel-slider.order-panel-slider--active#first
+    div(data-target='1').order-panel-slider.order-panel-slider--active
         div.swiper-container
             div.swiper-wrapper
                 div(style='background-image: url(./img/slides/m-slide1.jpg)', data-imgurl='./img/slides/m-slide1.jpg').swiper-slide.swiper-slide--bg
@@ -13,7 +13,7 @@ div.order-panel#ships
                 i.fas.fa-chevron-left
             div.order-panel-slider__center.img-zoom
                 i.fas.fa-search-plus
-    div(data-target='2').order-panel-slider#second
+    div(data-target='2').order-panel-slider
         div.swiper-container
             div.swiper-wrapper
                 div(style='background-image: url(./img/slides/f-slide2.jpg)', data-imgurl='./img/slides/f-slide2.jpg').swiper-slide.swiper-slide--bg
@@ -37,9 +37,9 @@ div.order-panel#ships
                 span.decor
                     i.fas.fa-chevron-down
             div.buttons-wrapper-helper
-                div(data-target='1').order-toggle-button.hidden
-                    div.order-toggle-button-icon.
-                        img(src='img/icons/ship.png' alt='icon-img').order-toggle-button__img
+                div(data-target='1').order-toggle-button
+                    div.order-toggle-button-icon
+                        img(src='img/icons/ship.png', alt='icon-img').order-toggle-button__img
                     div.order-toggle-button-text Теплоход #[br] #[span Фаворит]
                 div(data-target='2').order-toggle-button.order-toggle-button--active
                     div.order-toggle-button-icon

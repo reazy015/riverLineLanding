@@ -1,12 +1,12 @@
 section.schedule
     div.container#schedule
-        h2.schedule__header Расписание #[br] занятости теплоходов
+        h2.schedule__header Забронируйте #[br] место на экскурсию
         p.schedule__comment Выберите нужный вам день и оставьте заявку на бронирование
         div.schedule-panel
             div.schedule-panel-date
                 div.schedule-panel-date__btn.schedule-panel-date__btn--left
                     i.fas.fa-chevron-left
-                div.schedule-panel-date__info Май 21.05 - 27.05
+                div.schedule-panel-date__info Май #[span.monday] - #[span.sunday]
                 div.schedule-panel-date__btn.schedule-panel-date__btn--right
                     i.fas.fa-chevron-right
             div.schedule-panel-choice
@@ -14,14 +14,14 @@ section.schedule
                 label.choice-btn
                     input(type='radio', name='ship', checked).ship-choice-input
                     span Марго
-                label.choice-btn.choice-btn--hidden
+                label.choice-btn
                     input(type='radio', name='ship').ship-choice-input
                     span Фаворит
         div.schedule-table-grid-container
-            table.schedule-table.schedule-table--ss
+            table.schedule-table.schedule-table--fs
                 tr
                     th
-                    th Понедельник #[br]
+                    th.mon Понедельник #[br]
                         span.order-date 21.05
                     th Вторник #[br]
                         span.order-date 22.05
@@ -108,7 +108,7 @@ section.schedule
                     td
                     td
                 tr
-                    td(data-time='22:00') 22:00
+                    td(data-time='22:00') 23:00
                     td
                     td
                     td
@@ -117,34 +117,7 @@ section.schedule
                     td
                     td
                 tr
-                    td(data-time='22:30') 22:30
-                    td
-                    td
-                    td
-                    td
-                    td
-                    td
-                    td
-                tr
-                    td(data-time='23:00') 23:00
-                    td
-                    td
-                    td
-                    td
-                    td
-                    td
-                    td
-                tr
-                    td(data-time='23:30') 23:30
-                    td
-                    td
-                    td
-                    td
-                    td
-                    td
-                    td
-                tr
-                    td(data-time='00:00') 00:00
+                    td(data-time='22:30') 00:00
                     td
                     td
                     td
