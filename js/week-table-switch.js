@@ -27,6 +27,7 @@ window.weekTableSwithc = (function () {
   var popupModal = document.querySelector('.popup-wrapper ');
   var timeInputsList = document.querySelectorAll('.time-input');
   var timeSwitchList = document.querySelectorAll('.custom-select-variant-list');
+  var beginTimeList = document.querySelector('.begin-time-variants-list');
   var mondayBlock = document.querySelector('.schedule-panel-date__info .monday');
   var sundayBlock = document.querySelector('.schedule-panel-date__info .sunday');
   var mondayHeader = mainTable.querySelector('.mon');
@@ -35,6 +36,7 @@ window.weekTableSwithc = (function () {
     ['11:00', '12:30', '14:00', '15:30', '17:00', '18:30', '20:00', '21:30', '23:00', '00:00'],
     ['10:30', '12:00', '13:30', '15:00', '16:30', '18:00', '19:30', '21:00', '22:30', '00:00']
   ];
+  var testArray = [1,1,1,1,1,1,1,1,1];
   var monthDictionary = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август', 'Сентябрь','Октябрь', 'Ноябрь'];
   var monthDictionarPopup = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля','Августа', 'Сентября','Октября', 'Ноября'];
   var daysDictionary = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];  
@@ -42,6 +44,7 @@ window.weekTableSwithc = (function () {
   var startSunday = startMonday.addDays(6);
   var initialDate = new Date(startMonday);
   var tempDate = new Date(2018, 4, 21);
+  var TIME_PEROID = 10;
 
   function setTimeHeaders(index) {
     for (var i = 0; i < tableRowTimeHeader.length; i++) {
@@ -120,18 +123,54 @@ window.weekTableSwithc = (function () {
     }
   }
 
+  function createTimeListSchedule(array) {
+    var listItem = document.createElement('li');
+    var listItemText = document.createElement('span');
+
+    listItem.classList.add('variant-list-item');
+    listItem.setAttribute('data-time', '');
+
+    while (beginTimeList.firstElementChild) {
+      beginTimeList.removeChild(beginTimeList.firstElementChild);
+    }
+
+
+    for (var i = 0; i < array.length; i++) {
+       var currentTime = listItemText.cloneNode(true);
+       var currentItem = listItem.cloneNode(true);
+
+       currentItem.setAttribute('data-time', array[i]);
+       currentTime.textContent = array[i];
+
+       currentItem.appendChild(currentTime);
+
+       beginTimeList.appendChild(currentItem);
+    }
+
+  }
+
+  function checkCurrentShipAndCreateTimeList() {
+    var currentShip = document.querySelector('.ship-choice-input:checked');
+    var currentShipIndex = Array.prototype.indexOf.call(shipTableToggle, currentShip);
+
+    console.log(currentShip, currentShipIndex, shipTableToggle);
+    createTimeListSchedule(shipTimeSchedule[currentShipIndex]);
+  }
+
   function onOrderHandleClick(item, date, time) {
     if (item) {
       if (!item.dataset.disable) {
         orderPopup.classList.add('popup-wrapper--open');
         document.body.classList.add('no-scroll');
         orderPopupOrderDate.textContent = daysDictionary[date.getDay()] + ', ' + date.getDate() + ' ' + monthDictionarPopup[date.getMonth()];
-        orderPopupOrderTime.value = time;
+        orderPopupOrderTime.value = time;    
       }
     }  else {
       document.body.classList.add('no-scroll');
       orderPopup.classList.add('popup-wrapper--open');
     }
+
+    checkCurrentShipAndCreateTimeList();    
     document.addEventListener('click', closeOnOuterClick);
   }
 

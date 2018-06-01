@@ -2,7 +2,7 @@ div.popup-wrapper
     div.popup-module
         h1.popup-module__header Вы хотите забронировать:
         p.popup-module__date
-        form(method="POST", action="https://money.yandex.ru/eshop.xml").popup-module-form
+        form(method="POST", action="https://money.yandex.ru/eshop.xml", data-mail="./mail-sender.php", enctype="multipart/form-data").popup-module-form
             input(type="hidden", name="scid", value="21638")
             input(type="hidden", name="ShopID", value="30627", gt="", br="")
             div.popup-module-input-wrapper
@@ -13,25 +13,25 @@ div.popup-wrapper
                             input(type='text', name='start-time', data-readonly, value='12:00', required).time-input
                             i.fas.fa-chevron-down
                         ul.custom-select-variant-list.begin-time-variants-list
-                            li(data-time='11:00').variant-list-item
-                                span 11:00
-                            li(data-time='12:30').variant-list-item
-                                span 12:30
-                            li(data-time='14:00').variant-list-item
-                                span 14:00
-                            li(data-time='15:30').variant-list-item
-                                span 15:30
-                            li(data-time='17:00').variant-list-item
-                                span 17:00
-                            li(data-time='18:30').variant-list-item
-                                span 18:30
-                            li(data-time='20:00').variant-list-item
-                                span 20:00
+                            //- li(data-time='11:00').variant-list-item
+                            //-     span 11:00
+                            //- li(data-time='12:30').variant-list-item
+                            //-     span 12:30
+                            //- li(data-time='14:00').variant-list-item
+                            //-     span 14:00
+                            //- li(data-time='15:30').variant-list-item
+                            //-     span 15:30
+                            //- li(data-time='17:00').variant-list-item
+                            //-     span 17:00
+                            //- li(data-time='18:30').variant-list-item
+                            //-     span 18:30
+                            //- li(data-time='20:00').variant-list-item
+                            //-     span 20:00
 
-                    div.custom-select.custom-select--alldaycheck
-                        label.alldaycheck-input-wrapper
-                            input(type='checkbox', name='allday')
-                            span Весь день
+                    //- div.custom-select.custom-select--alldaycheck
+                    //-     label.alldaycheck-input-wrapper
+                    //-         input(type='checkbox', name='allday')
+                    //-         span Весь день
 
             div.popup-module-input-wrapper
                 span.input-wrapper__instruction Контакты:

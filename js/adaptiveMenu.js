@@ -19,8 +19,7 @@ window.adaptiveMenu = (function () {
   for (var i = 0; i < menuItemsList.length; i++) {
   	menuItemsList[i].addEventListener('click', function() {
   		disableAllActive();
-  		this.classList.add('header-nav-list-item--active');
-  		console.log(menuItemsList);
+  		this.classList.add('header-nav-list-item--active');  		
   	});
   }
 
