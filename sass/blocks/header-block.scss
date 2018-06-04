@@ -12,6 +12,13 @@
     padding-bottom: 45px;
     background-image: url(../img/bg/mobile-bg.jpg);
   }
+
+  &--ls {
+    padding-bottom: 190px;
+  }
+}
+.page-header--ls .page-header__header {
+  max-width: 680px;
 }
 .page-header-top-wrapper {
   display: flex;
@@ -59,25 +66,29 @@
       }
 
       & .header-nav-list-item {
-        font-size: 18px;
+        font-size: 18px;        
       }
     }
   }
 }
-.header-nav-list-item--active {
-  @media (min-width: 1024px) {
-    position: relative;
+.header-nav-list-item {
+  position: relative;
 
-    &:after {
-      position: absolute;
-      display: block;
-      content: '';
-      top: 120%;
-      left: 0;
-      right: 0;
-      height: 2px; 
-      background-color: $table-azure;
-    }
+  &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 120%;
+    left: 50%;
+    width: 0;
+    transform: translate(-50%);
+    height: 2px; 
+    background-color: $table-azure;
+    transition: all .3s;
+  }
+
+  &:hover:after {
+    width: 100%;
   }
 }
 .page-header-logo-wrapper {
@@ -168,6 +179,20 @@
     visibility: visible;
     background-color: rgba(0, 0, 0, 0.1);
   }
+
+  &--sc {
+    @include gotham-bold;
+    display: block;
+    background: #fff;
+    color: #1b5f87;
+    width: 289px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  @media (max-width: 470px) {
+
+  }
 }
 .callback-btn-wrapper {
   display: block;
@@ -175,13 +200,20 @@
   padding: 5px;
   border-radius: 50px;
   background-color: rgba(1, 1, 1, 0.1);
+
+  @media (max-width: 470px) {
+    max-width: 100%;
+  }
 }
 .nav-toggle-btn {
   display: none;
+  flex-direction: column;
+  justify-content: center;
   z-index: 70;
+  margin-left: auto;
 
   @media (max-width: 1024px) {
-    display: block;
+    display: flex;
     cursor: pointer;
 
     & span {
@@ -199,4 +231,19 @@
 @keyframes rollIn {
   from {top: -100%}
   to {top: 0%}
+}
+.page-header-callback-controls {
+  display: flex;
+
+  & .page-header__callback {
+    width: 289px;
+
+    @media (max-width: 470px) {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 740px) {
+    display: block;
+  }
 }

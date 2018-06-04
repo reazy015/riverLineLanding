@@ -82,17 +82,17 @@ window.passengerBox = ( function() {
     updateTotalPrice();
   });
 
-  allDayCheckboxInput.addEventListener('change', function() {
-    if (this.checked) {
-      updateAlldayPrice();
-      updateTotalPrice();
-    }
+  // allDayCheckboxInput.addEventListener('change', function() {
+  //   if (this.checked) {
+  //     updateAlldayPrice();
+  //     updateTotalPrice();
+  //   }
 
-    if (!this.checked) {
-      returnOldPrices();
-      updateTotalPrice();
-    }
-  });
+  //   if (!this.checked) {
+  //     returnOldPrices();
+  //     updateTotalPrice();
+  //   }
+  // });
 
   passengerTypeInput.addEventListener('click', openPassengerTypeDropDown);
 
